@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicEye - NGO Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>CivicEye</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Hazard</a>
+            <a href="view.html">View Hazards</a>
+            <a href="validate.html">Validate Hazards</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="ngo.html">NGO Login</a>
+        </nav>
+    </header>
+    <main>
+        <section id="loginSection">
+            <h2>NGO Login</h2>
+            <form id="ngoForm">
+                <label for="ngoId">NGO ID:</label>
+                <input type="text" id="ngoId" placeholder="Enter NGO ID" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="ngoStatus"></p>
+        </section>
+        <section id="dashboardSection" style="display: none;">
+            <h2>NGO Dashboard</h2>
+            <p>Logged in as: <span id="currentNgo"></span> <button onclick="logoutNgo()">Logout</button></p>
+            <h3>Validated Hazards (Update Status)</h3>
+            <div id="ngoMap" style="height: 400px;"></div>
+            <ul id="ngoHazardList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Thank you! Contact us for more info.</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('ngoForm').addEventListener('submit', loginNgo);
+        checkNgoLoggedIn();
+    </script>
+</body>
+</html>

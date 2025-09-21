@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicEye - View Hazards</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>CivicEye</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Hazard</a>
+            <a href="view.html">View Hazards</a>
+            <a href="validate.html">Validate Hazards</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Validated Hazards (Sorted by Urgency)</h2>
+            <div id="map" style="height: 400px;"></div>
+            <ul id="hazardList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Thank you! Contact us for more info.</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script>
+        loadValidatedHazards();
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicEye - Report Hazard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CivicEye</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Hazard</a>
+            <a href="view.html">View Hazards</a>
+            <a href="validate.html">Validate Hazards</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Report a Hazard</h2>
+            <form id="reportForm">
+                <div id="usernameSection">
+                    <label for="username">Darpan ID:</label>
+                    <input type="text" id="username" placeholder="Enter Darpan ID" required>
+                    <label>
+                        <input type="checkbox" id="isNgo"> NGO Login (Verify at <a href="https://ngodarpan.gov.in" target="_blank">ngodarpan.gov.in</a>)
+                    </label>
+                    <small id="usernameHelp">Alphanumeric, min 6 chars. NGOs: Prefix will be added automatically.</small>
+                </div>
+                
+                <label for="description">Description:</label>
+                <textarea id="description" required></textarea>
+                
+                <label for="type">Type:</label>
+                <select id="type" required>
+                    <option value="air">Air Pollution</option>
+                    <option value="water">Water Pollution</option>
+                    <option value="waste">Waste Dump</option>
+                </select>
+                
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" accept="image/*">
+                
+                <label>Geotag (Lat, Lng):</label>
+                <input type="text" id="lat" placeholder="Latitude" required>
+                <input type="text" id="lng" placeholder="Longitude" required>
+                <button type="button" onclick="getLocation()">Use Current Location</button>
+                
+                <button type="submit">Submit Report</button>
+            </form>
+            <p id="status"></p>
+        </section>
+    </main>
+    <footer>
+        <p>Thank you! Contact us for more info.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        loadUserForForm('reportForm');
+        document.getElementById('reportForm').addEventListener('submit', submitReport);
+        document.getElementById('isNgo').addEventListener('change', toggleNgoLogin);
+    </script>
+</body>
+</html>

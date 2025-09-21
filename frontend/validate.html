@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicEye - Validate Hazards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CivicEye</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Hazard</a>
+            <a href="view.html">View Hazards</a>
+            <a href="validate.html">Validate Hazards</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="ngo.html">NGO Login</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Validate Pending Hazards</h2>
+            <p>Review and vote on whether reports are valid (true) or invalid/spam (false). Enter your username to vote and earn points.</p>
+            <div id="validatorUsernameSection">
+                <label for="vali<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicEye - Validate Hazards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CivicEye</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Hazard</a>
+            <a href="view.html">View Hazards</a>
+            <a href="validate.html">Validate Hazards</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Validate Pending Hazards</h2>
+            <p>Review and vote on whether reports are valid (true) or invalid/spam (false). Enter your Darpan ID to vote and earn points.</p>
+            <div id="validatorUsernameSection">
+                <label for="validatorUsername">Darpan ID:</label>
+                <input type="text" id="validatorUsername" placeholder="Enter Darpan ID" required>
+                <label>
+                    <input type="checkbox" id="validatorIsNgo"> NGO Login (Verify at <a href="https://ngodarpan.gov.in" target="_blank">ngodarpan.gov.in</a>)
+                </label>
+                <small id="validatorHelp">Alphanumeric, min 6 chars. NGOs: Prefix will be added automatically.</small>
+            </div>
+            <ul id="pendingList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Thank you! Contact us for more info.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        loadUserForForm('validateForm');
+        loadPendingHazards();
+        document.getElementById('validatorIsNgo').addEventListener('change', toggleNgoLogin);
+    </script>
+</body>
+</html>datorUsername">Your Username:</label>
+                <input type="text" id="validatorUsername" placeholder="Enter username" required>
+            </div>
+            <ul id="pendingList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Thank you! Contact us for more info.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        checkCurrentUserForForm('validateForm'); // Fake form ID for check
+        loadPendingHazards();
+    </script>
+</body>
+</html>
